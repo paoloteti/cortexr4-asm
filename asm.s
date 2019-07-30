@@ -73,3 +73,13 @@ __vfp_enable:
     bx lr
 .endif
 
+    .section .text.__idle_cpu
+    .global __idle_cpu
+__idle_cpu:
+    wfi
+    nop
+    nop
+    nop
+    nop
+    bx    lr
+

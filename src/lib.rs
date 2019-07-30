@@ -98,3 +98,12 @@ pub unsafe fn vfp_enable() {
     }
     __vfp_enable()
 }
+
+/// Take CPU to IDLE state
+#[inline]
+pub unsafe fn idle_cpu() {
+    extern "C" {
+        fn __idle_cpu();
+    }
+    __idle_cpu()
+}
