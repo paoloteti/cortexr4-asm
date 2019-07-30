@@ -1,0 +1,8 @@
+[package]
+authors = ["Paolo Teti <paolo.teti@gmail.com>"]
+name = "cortexr4_asm"
+version = "0.1.0"
+categories = ["embedded", "hardware-support", "no-std"]
+description = "Cortex-R4/R4F assembly functions"
+keywords = ["ARM", "Cortex-R4", "Cortex-R5"]
+edition = "2018"
