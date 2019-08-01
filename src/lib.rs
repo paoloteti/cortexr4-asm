@@ -110,6 +110,15 @@ pub unsafe fn idle_cpu() {
 
 /// Wrappers to oneline assembly functions
 pub mod asm {
+    /// Add a NOP istruction
+    #[inline(always)]
+    pub unsafe fn nop() {
+        extern "C" {
+            fn __nop();
+        }
+        __nop()
+    }
+
     /// Enable interrupts - R4 IRQ & FIQ
     #[inline]
     pub unsafe fn enable_interrupt() {

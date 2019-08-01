@@ -3,6 +3,13 @@
     .syntax unified
     .arm
 
+    .section .text.__nop
+    .weak __nop
+    .type __nop, %function
+__nop:
+    nop
+    bx lr
+
 // Enable interrupts - R4 IRQ & FIQ
     .section .text.__enable_interrupt
     .weak __enable_interrupt
