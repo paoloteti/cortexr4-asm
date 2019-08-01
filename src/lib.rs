@@ -107,3 +107,59 @@ pub unsafe fn idle_cpu() {
     }
     __idle_cpu()
 }
+
+mod asm {
+    /// Enable interrupts - R4 IRQ & FIQ
+    #[inline]
+    pub unsafe fn enable_interrupt() {
+        extern "C" {
+            fn __enable_interrupt();
+        }
+        __enable_interrupt()
+    }
+
+    /// Disable interrupts - R4 IRQ & FIQ
+    #[inline]
+    pub unsafe fn disable_interrupt() {
+        extern "C" {
+            fn __disable_interrupt();
+        }
+        __disable_interrupt()
+    }
+
+    /// Enable IRQ interrupt
+    #[inline]
+    pub unsafe fn enable_IRQ_interrupt() {
+        extern "C" {
+            fn __enable_IRQ_interrupt();
+        }
+        __enable_IRQ_interrupt()
+    }
+
+    /// Disable IRQ interrupt
+    #[inline]
+    pub unsafe fn disable_IRQ_interrupt() {
+        extern "C" {
+            fn __disable_IRQ_interrupt();
+        }
+        __disable_IRQ_interrupt()
+    }
+
+    /// Enable FIQ interrupt
+    #[inline]
+    pub unsafe fn enable_FIQ_interrupt() {
+        extern "C" {
+            fn __enable_FIQ_interrupt();
+        }
+        __enable_FIQ_interrupt()
+    }
+
+    /// Disable FIQ interrupt
+    #[inline]
+    pub unsafe fn disable_FIQ_interrupt() {
+        extern "C" {
+            fn __disable_FIQ_interrupt();
+        }
+        __disable_FIQ_interrupt()
+    }
+}

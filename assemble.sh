@@ -5,7 +5,7 @@ set -euxo pipefail
 main() {
     local crate=cortex-r4-asm
 
-    local asmfile="asm.s cpustack.s init_reg.s"
+    local asmfile="utils.s asm.s cpustack.s init_reg.s"
 
     rm -f bin/*.a
 
