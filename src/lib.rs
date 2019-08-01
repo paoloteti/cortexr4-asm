@@ -112,11 +112,11 @@ pub unsafe fn idle_cpu() {
 pub mod asm {
     /// Add a NOP istruction
     #[inline(always)]
-    pub unsafe fn nop() {
+    pub fn nop() {
         extern "C" {
             fn __nop();
         }
-        __nop()
+        unsafe { __nop() }
     }
 
     /// Enable interrupts - R4 IRQ & FIQ
